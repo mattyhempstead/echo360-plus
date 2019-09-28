@@ -1,6 +1,6 @@
 /// This script essentially needs to create a chain of triggers to get 
 /// the mutation code to execute at the right time.
-
+console.log('Running custom file name script')
 
 // Information about the selected lecture
 let lecInfo = {}

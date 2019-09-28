@@ -4,11 +4,21 @@
     "content_scripts": [
         {
             "matches": [
-                "https://echo360.org.au/*",
-                "http://echo360.org.au/*"
+                "https://echo360.org.au/section/*",
+                "http://echo360.org.au/section/*"
             ],
             "js": [
                 "src/content.js"
+            ],
+            "all_frames": true,
+            "run_at" : "document_end"
+        },{
+            "matches": [
+                "https://echo360.org.au/lesson/*",
+                "http://echo360.org.au/lesson/*"
+            ],
+            "js": [
+                "src/more-speed.js"
             ],
             "all_frames": true,
             "run_at" : "document_end"
