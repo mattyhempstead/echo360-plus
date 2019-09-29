@@ -1,6 +1,13 @@
 {
-    "name": "echo360 improvements",
-    "version": "0.1",
+    "name": "Echo360+",
+    "description": "Various improvements to the Echo360 video streamer/downloader",
+    "version": "1.0",
+    "manifest_version": 2,
+    "icons": {
+        "16": "icons/icon16.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
+    },
     "content_scripts": [
         {
             "matches": [
@@ -8,7 +15,7 @@
                 "http://echo360.org.au/section/*"
             ],
             "js": [
-                "src/content.js"
+                "scripts/custom-file-names.js"
             ],
             "all_frames": true,
             "run_at" : "document_end"
@@ -18,11 +25,10 @@
                 "http://echo360.org.au/lesson/*"
             ],
             "js": [
-                "src/more-speed.js"
+                "scripts/more-speed-options.js"
             ],
             "all_frames": true,
             "run_at" : "document_end"
         }
-    ],
-    "manifest_version": 2
+    ]
 }
