@@ -29,6 +29,16 @@
             ],
             "all_frames": true,
             "run_at" : "document_end"
+        },{
+            "matches": [
+                "https://echo360.org.au/section/*",
+                "http://echo360.org.au/section/*"
+            ],
+            "js": [
+                "scripts/day-with-dates.js"
+            ],
+            "all_frames": true,
+            "run_at" : "document_end"
         }
     ]
 }
