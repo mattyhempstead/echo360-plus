@@ -1,0 +1,9 @@
+.menu.centered .menu-items:after {
+    margin-left: 100% !important;
+    left: -19px !important;
+}
+
+.menu.centered .menu-items {
+    -webkit-transform: translateX(50%) !important;
+    transform: translateX(0%) !important;
+}

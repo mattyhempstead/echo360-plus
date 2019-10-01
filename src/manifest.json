@@ -39,6 +39,15 @@
             ],
             "all_frames": true,
             "run_at" : "document_end"
+        },{
+            "matches": [
+                "https://echo360.org.au/section/*",
+                "http://echo360.org.au/section/*"
+            ],
+            "css": [
+                "scripts/reposition-popup.css"
+            ],
+            "all_frames": true
         }
     ]
 }
