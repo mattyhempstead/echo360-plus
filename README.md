@@ -1,5 +1,5 @@
 # Echo360+
-## Various improvements to the Echo360 video streamer/downloader
+### Various improvements to the Echo360 video streamer/downloader
 
 [Chrome Web Store Listing](https://chrome.google.com/webstore/detail/echo360%20/golfblfimaaodgjjagigkahbbhbagndl?hl=en&gl=AU&authuser=1)
 
@@ -16,7 +16,7 @@ This extension adds 4 faster playback options (2.25x, 2.50x, 2.75x, 3.00x) for t
 
 3. Add day to lecture date strings
 By default, Echo360 displays the date (e.g. 4th Aug), but not the day (e.g. Wednesday) on the list of lectures for a particular unit.
-As most people usually associated lectures times with days rather than dates, I am often found opening a calendar app to check the date a particular lecture was run, when simply displaying the day would be enough information to deduce this myself.
+As most people usually associated lectures times with days rather than dates, I often find myself opening a calendar app to check the date a particular lecture was run, when simply displaying the day would be enough information to deduce this myself.
 Thus, this extension also adds a small 3 letter day string next to each lecture.
 
 4. Re-position the view lecture popup
