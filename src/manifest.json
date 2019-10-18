@@ -18,8 +18,9 @@
                 "scripts/custom-file-names.js"
             ],
             "all_frames": true,
-            "run_at" : "document_end"
-        },{
+            "run_at": "document_end"
+        },
+        {
             "matches": [
                 "https://echo360.org.au/lesson/*",
                 "http://echo360.org.au/lesson/*"
@@ -28,8 +29,9 @@
                 "scripts/more-speed-options.js"
             ],
             "all_frames": true,
-            "run_at" : "document_end"
-        },{
+            "run_at": "document_end"
+        },
+        {
             "matches": [
                 "https://echo360.org.au/section/*",
                 "http://echo360.org.au/section/*"
@@ -38,8 +40,9 @@
                 "scripts/day-with-dates.js"
             ],
             "all_frames": true,
-            "run_at" : "document_end"
-        },{
+            "run_at": "document_end"
+        },
+        {
             "matches": [
                 "https://echo360.org.au/section/*",
                 "http://echo360.org.au/section/*"
@@ -48,6 +51,17 @@
                 "scripts/reposition-popup.css"
             ],
             "all_frames": true
+        },
+        {
+            "matches": [
+                "https://echo360.org.au/section/*",
+                "http://echo360.org.au/section/*"
+            ],
+            "js": [
+                "scripts/hide-future-lectures.js"
+            ],
+            "all_frames": true,
+            "run_at": "document_end"
         }
     ]
 }
