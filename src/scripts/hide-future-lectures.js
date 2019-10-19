@@ -1,7 +1,7 @@
 /*
-    This script hides the display for lectures that haven't yet been released.
-    It also sets the default sorting method to Newest to accompany this feature.
-    This will ensure the newest released lectures will always remain at the top and are easily accessible
+  This script hides the display for lectures that haven't yet been released.
+  It also sets the default sorting method to Newest to accompany this feature.
+  This will ensure the newest released lectures will always remain at the top and are easily accessible
 */
 
 (() => {
@@ -30,9 +30,18 @@
     }
   }
 
-  // Place the checkbox element on the info bar
-  infoBar.appendChild(document.createTextNode('Hide future lectures'))
-  infoBar.appendChild(toggleFutureLectures)
+  // Create a container element on the info bar to hold a toggle box for this feature
+  const hideFutureDiv = document.createElement('div')
+  infoBar.appendChild(hideFutureDiv)
+  hideFutureDiv.className = 'hide-future'
+  
+  // Place a label in this container
+  const label = document.createElement('label')
+  label.textContent = "Hide future lectures"
+  hideFutureDiv.appendChild(label)
+
+  // Place the checkbox element in this container
+  hideFutureDiv.appendChild(toggleFutureLectures)
 
 
   // The div which hold all the lectures

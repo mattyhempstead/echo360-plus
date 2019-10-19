@@ -1,0 +1,16 @@
+.hide-future {
+    display: inline;
+    margin-left: 20px;
+}
+
+.hide-future label {
+    line-height: 40px;
+    vertical-align: top;
+}
+
+.hide-future input {
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 100%;
+    margin-left: 10px;
+}
