@@ -48,7 +48,10 @@
   const lectureContainer = document.getElementsByClassName('contents-wrapper')[0]
 
   // Store all the lectures that we hide, so we can bring them back.
-  let futureLectures = []
+  let futureLectures = Array.from(document.getElementsByClassName('class-row future'))
+  
+  // Hide any lectures which are already in the document before script loads
+  toggleFutureLectures.onchange()
 
   // As lectures are loaded asyncronously after page loads, we need a listener to check
   // whenever a new element is inserted into the DOM element which contains the lectures.
