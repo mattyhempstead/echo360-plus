@@ -21,6 +21,10 @@ Thus, this extension also adds a small 3 letter day string next to each lecture.
 4. *Re-position the view lecture popup*  
 For some reason, the view lecture popup is always partially hidden behind the right hand side of the page. Echo360+ moves this popup back into the page where it should already be.
 
+5. *Allow hiding of future lectures*  
+By default, Echo360 will display all lectures (including those not released yet), and does not provide a feature to hide them.
+This extension add a checkbox to do exactly that which is enabled by default.
+
 More features coming soon!
 
 Note:
