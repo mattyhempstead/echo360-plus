@@ -1,8 +1,18 @@
-// This script hides the display for lectures that haven't yet been released
+/*
+    This script hides the display for lectures that haven't yet been released.
+    It also sets the default sorting method to Newest to accompany this feature.
+    This will ensure the newest released lectures will always remain at the top and are easily accessible
+*/
 
 (() => {
     console.log('Echo360+ - hide future lectures')
 
+    // Set the default sorting method to "Newest"
+    // This is done by just clicking the dropdown and Newest option elements in order
+    document.getElementsByClassName("selection-value")[0].click()
+    document.getElementsByClassName("active-result")[1].click()
+
+    
     // Reference to info the info bar, which also displays the sort-by dropdown.
     const infoBar = document.getElementsByClassName('info-bar')[0]
 
