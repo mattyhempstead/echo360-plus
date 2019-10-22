@@ -45,7 +45,7 @@
       let lectureString = rowElement.getAttribute('aria-label')
 
       // Get unit of study (e.g. DATA1002)
-      lecInfo.uos = lectureString.split('(')[1].split(' ')[0]
+      lecInfo.uos = lectureString.split('(').slice(-1)[0].split(' ')[0]
 
       // Decode date (not time) into javascript Date object
       let dateString = lectureString.split('-')[0]
