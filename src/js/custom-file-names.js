@@ -88,7 +88,11 @@
   function updateBtnHref(btn) {
     // Modify download link to give custom name to file
     let fileExtension = btn.getAttribute('href').split('.').pop()
-    let customFileName = `${lecInfo.uos}-${lecInfo.date.getFullYear()}-${lecInfo.date.getMonth()+1}-${lecInfo.date.getDate()}.${fileExtension}`
+
+    const year = lecInfo.date.getFullYear();
+    const month = ((lecInfo.date.getMonth()+1)+'').padStart(2, '0');
+    const day = (lecInfo.date.getDate()+'').padStart(2, '0');
+    let customFileName = `${lecInfo.uos}-${year}-${month}-${day}.${fileExtension}`
     let url = new URL(btn.href)
     url.searchParams.set('fileName', customFileName)
     btn.setAttribute('href', url.toString() + '&custom')
