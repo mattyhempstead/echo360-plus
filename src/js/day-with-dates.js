@@ -7,8 +7,9 @@
   new MutationObserver((mutationsList, obsvr) => {
     for (let mutation of mutationsList) {
       for (let node of mutation.addedNodes) {
+
         // "class-row" elements
-        if (node.className == 'class-row')
+        if (node.classList && node.classList.contains("class-row"))
           addDayStringToRow(node);
       
         // "class-row" elements in groups
