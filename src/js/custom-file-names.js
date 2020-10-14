@@ -13,7 +13,7 @@
     for (let mutation of mutationsList) {
       for (let node of mutation.addedNodes) {
         // "class-row" elements
-        if (node.className == 'class-row')
+        if (node.classList && node.classList.contains("class-row"))
           addListenerToLectureRow(node);
       
         // "class-row" elements in groups
@@ -52,6 +52,7 @@
   document.body.addEventListener('DOMNodeInserted', (evt) => {
     // Update Download button DOM when a modal is added
     if (evt.target.className == 'modal ') {
+
       // Remove old observer when a new modal is opened
       if (observer) observer.disconnect();
 
@@ -60,32 +61,36 @@
       observer = new MutationObserver((mutations) => {
         for (mutation of mutations) {
           // Only apply change if not already updated
+          // if (!downloadBtnElement.getAttribute('href').endsWith('custom')) {
           if (!downloadBtnElement.getAttribute('href').endsWith('custom')) {
             updateBtnHref(downloadBtnElement);
           }
         }
       });
 
-      observer.observe(downloadBtnElement, { attributes: true })
+      observer.observe(downloadBtnElement, { attributes: true });
     }
   })
 
 
   // Updates the href of the download button to have custom file name
-  function updateBtnHref(btn) {
+  const updateBtnHref = async btn => {
     // Modify download link to give custom name to file
-    let fileExtension = btn.getAttribute('href').split('.').pop();
+    const oldUrl = btn.getAttribute('href');
+    const fileExtension = oldUrl.split('.').pop();
 
     const isValidDate = lecInfo.date.getTime() != 0;
     const year = isValidDate ? lecInfo.date.getFullYear() : '0000';
     const month = isValidDate ? ((lecInfo.date.getMonth()+1)+'').padStart(2, '0') : '00';
     const day = isValidDate ? (lecInfo.date.getDate()+'').padStart(2, '0') : '00';
 
-    let customFileName = `${lecInfo.uos}-${year}-${month}-${day}.${fileExtension}`;
-
-    let url = new URL(btn.href);
-    url.searchParams.set('fileName', customFileName);
-    btn.setAttribute('href', url.toString() + '&custom');
+    const customFileName = `${lecInfo.uos}-${year}-${month}-${day}.${fileExtension}`;
+  
+    // Url on button is a redirect to the download URL
+    // We fetch the redirect url, modify, and replace the old button href with the modified redirect url
+    const redirectUrl = (await fetch(oldUrl)).url;
+    const downloadUrl = redirectUrl.replace(/filename%3D%22.*%22/gi, 'filename%3D%22' + customFileName + '%22');
+    btn.setAttribute('href', downloadUrl + '&custom');
   }
 
 })()
